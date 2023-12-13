@@ -1,0 +1,3 @@
+{
+  "createUsersEndPoint": "https://fakerestapi.azurewebsites.net/api/v1/Users"
+}
