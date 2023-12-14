@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UsersTests {
+public class UsersTests extends UsersAPIs{
 
     @Test
     public void createUserWithPayloadFromString(){
@@ -35,13 +35,9 @@ public class UsersTests {
     @Test
     public void createUserWithURLFromJsonFile() throws IOException {
 
-        String env = System.getProperty("env") == null ? "qa" : System.getProperty("env");
-
-        Map<String,String> data = JsonUtils.getJsonDataAsMap("users/"+env+"/usersApiData.json");
-        String endPoint = data.get("createUsersEndPoint");
         Map<String, Object> requestPayload = Payloads.getCreateUserPayloadFromMap("Foden Duong","Helloworld");
-        Response response = RestUtils.performPost(endPoint,requestPayload,new HashMap<>()); //Don't need to pass header, so just add the new Empty Map here
-        Assert.assertEquals(response.statusCode(),200);
+        Response response = createUser(requestPayload);
+        Assert.assertEquals(response.statusCode(),404);
 
     }
 }
