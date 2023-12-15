@@ -8,11 +8,11 @@
           name="C:/Users/PC/Desktop/CommonRestAPIAutomationFramework/src/test/java/users/UsersTests.java">
         <classes>
             <class name="users.UsersTests">
-                <methods>
-                    <include name="createUserWithPayloadFromString"/>
-                    <include name="createUserWithPayloadFromMap"/>
-                    <include name="createUserWithURLFromJsonFile"/>
-                </methods>
+<!--                <methods>-->
+<!--                    <include name="createUserWithPayloadFromString"/>-->
+<!--                    <include name="createUserWithPayloadFromMap"/>-->
+<!--                    <include name="createUserWithURLFromJsonFile"/>-->
+<!--                </methods>-->
             </class>
         </classes>
     </test>

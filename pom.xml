@@ -33,7 +33,7 @@
         <jacksonVersion>2.16.0</jacksonVersion>
         <gsonVersion>2.10.1</gsonVersion>
         <extentVersion>5.1.1</extentVersion>
-        <javafakerVersion>1.0.2</javafakerVersion>
+        <datafakerVersion>2.0.2</datafakerVersion>
         <lombokVersion>1.18.30</lombokVersion>
         <apacheCommonLangVersion>3.14.0</apacheCommonLangVersion>
     </properties>
@@ -74,11 +74,11 @@
             <version>${extentVersion}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+        <!-- https://mvnrepository.com/artifact/net.datafaker/datafaker -->
         <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>${javafakerVersion}</version>
+            <groupId>net.datafaker</groupId>
+            <artifactId>datafaker</artifactId>
+            <version>${datafakerVersion}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
