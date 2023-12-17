@@ -18,7 +18,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <folkCount>0 </folkCount>
+<!--                    <folkCount>0 </folkCount>-->
                 </configuration>
             </plugin>
         </plugins>
@@ -36,6 +36,7 @@
         <datafakerVersion>2.0.2</datafakerVersion>
         <lombokVersion>1.18.30</lombokVersion>
         <apacheCommonLangVersion>3.14.0</apacheCommonLangVersion>
+        <javersVersion>7.3.6</javersVersion>
     </properties>
 
     <dependencies>
@@ -93,6 +94,13 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${apacheCommonLangVersion}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.javers/javers-core -->
+        <dependency>
+            <groupId>org.javers</groupId>
+            <artifactId>javers-core</artifactId>
+            <version>${javersVersion}</version>
         </dependency>
 
     </dependencies>

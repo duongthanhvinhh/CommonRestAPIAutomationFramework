@@ -3,7 +3,10 @@ package users;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import reporting.ExtentReportManager;
+import reporting.Setup;
 import restUtils.RestUtils;
 import users.pojos.Users;
 import utils.JsonUtils;
@@ -12,6 +15,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+@Listeners(Setup.class)
 public class UsersTests extends UsersAPIs{
 
     @Test
@@ -62,5 +66,20 @@ public class UsersTests extends UsersAPIs{
         Response response = createUser(requestPayload);
         Assert.assertEquals(response.statusCode(),200);
 
+    }
+
+    @Test
+    public void createUserAndVerifyResponse() throws IOException {
+
+        Users payload = new Users();
+        Response response = createUser(payload);
+
+        //first way
+//        Assert.assertEquals(response.jsonPath().getString("password"),payload.getPassWord());
+
+        //second way: parse the response to object
+        ObjectMapper objectMapper = new ObjectMapper();
+        Users createUsersResponse = objectMapper.readValue(response.getBody().asString(), Users.class);
+        Assert.assertEquals(createUsersResponse,payload);
     }
 }

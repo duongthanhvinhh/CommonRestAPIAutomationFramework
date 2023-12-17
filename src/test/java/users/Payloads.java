@@ -33,7 +33,6 @@ public class Payloads {
     }
 
     public static Users getCreateUserPayloadFromPojo(){
-
         return  Users
                 .builder()
                 .userName(RandomDataGenerator.getRandomDataFor(RandomDataTypeNames.FULLNAME))

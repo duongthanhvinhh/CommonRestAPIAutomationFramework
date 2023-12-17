@@ -15,6 +15,8 @@ public class RandomDataGenerator {
                 return faker.name().lastName();
             case FULLNAME:
                 return faker.name().fullName();
+            case PASSWORD:
+                return faker.number().digits(10);
             default:
                 return "Data type name not available";
         }
