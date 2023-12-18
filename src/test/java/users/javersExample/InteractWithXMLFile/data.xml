@@ -1,0 +1,12 @@
+<employees>
+    <employee>
+        <id>1</id>
+        <name>Foden Duong</name>
+        <role>QA Automation</role>
+    </employee>
+    <employee>
+        <id>2</id>
+        <name>Thanh Vinh</name>
+        <role>Fullstack QA</role>
+    </employee>
+</employees>
