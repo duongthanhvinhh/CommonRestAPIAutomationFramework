@@ -1,4 +1,4 @@
-package users.javersExample.InteractWithJsonFile;
+package users.javersExample.InteractWithJsonFile.UsingJackson;
 
 public class Address {
 
@@ -28,5 +28,6 @@ public class Address {
     public void setState(String state) {
         this.state = state;
     }
+
 
 }

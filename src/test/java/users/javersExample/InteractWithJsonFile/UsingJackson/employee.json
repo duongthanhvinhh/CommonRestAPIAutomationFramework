@@ -1,0 +1,16 @@
+{
+  "name": "Foden Duong",
+  "age": 24,
+  "address": [
+    {
+      "street": "abc",
+      "city": "Quang Ngai",
+      "state": "QN"
+    },
+    {
+      "street": "xyz",
+      "city": "Ho Chi Minh",
+      "state": "HCM"
+    }
+  ]
+}

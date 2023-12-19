@@ -1,4 +1,4 @@
-package users.javersExample.InteractWithJsonFile;
+package users.javersExample.InteractWithJsonFile.UsingGson;
 
 import java.util.List;
 

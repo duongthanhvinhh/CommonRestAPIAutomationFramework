@@ -1,4 +1,4 @@
-package users.javersExample.InteractWithJsonFile;
+package users.javersExample.InteractWithJsonFile.UsingGson;
 
 import com.google.gson.Gson;
 
@@ -6,9 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 public class ReadJsonFileUsingGson {
-
     public static void main(String[] args) throws FileNotFoundException {
-        FileReader reader = new FileReader("src/test/java/users/javersExample/InteractWithJsonFile/data.json");
+        FileReader reader = new FileReader("src/test/java/users/javersExample/InteractWithJsonFile/UsingGson/data.json");
         Gson gson = new Gson();
         Person person = gson.fromJson(reader,Person.class);
         System.out.println("Name: " + person.getName());

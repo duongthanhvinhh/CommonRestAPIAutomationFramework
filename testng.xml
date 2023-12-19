@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <listeners>
-        <listener class-name="reporting.Setup"></listener>
-    </listeners>
-    <test verbose="2" preserve-order="true"
-          name="C:/Users/PC/Desktop/CommonRestAPIAutomationFramework/src/test/java/users/UsersTests.java">
+    <test verbose="2" preserve-order="true" name="C:/Users/PC/Desktop/CommonRestAPIAutomationFramework">
         <classes>
             <class name="users.UsersTests">
-<!--                <methods>-->
-<!--                    <include name="createUserWithPayloadFromString"/>-->
-<!--                    <include name="createUserWithPayloadFromMap"/>-->
-<!--                    <include name="createUserWithURLFromJsonFile"/>-->
-<!--                </methods>-->
+                <methods>
+                    <include name="createUserWithPayloadFromString"/>
+                    <include name="createUserWithPayloadFromMap"/>
+                    <include name="createUserWithURLFromJsonFile"/>
+                    <include name="createUserWithDataFaker"/>
+                    <include name="createUserWithPojo"/>
+                    <include name="createUserAndVerifyResponse"/>
+                </methods>
+            </class>
+            <class name="users.UsersTestsNew">
+                <methods>
+                    <include name="createUserAndVerify"/>
+                </methods>
             </class>
         </classes>
     </test>

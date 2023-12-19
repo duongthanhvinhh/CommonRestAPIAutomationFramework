@@ -37,6 +37,7 @@
         <lombokVersion>1.18.30</lombokVersion>
         <apacheCommonLangVersion>3.14.0</apacheCommonLangVersion>
         <javersVersion>7.3.6</javersVersion>
+        <pdfboxVersion>3.0.1</pdfboxVersion>
     </properties>
 
     <dependencies>
@@ -101,6 +102,33 @@
             <groupId>org.javers</groupId>
             <artifactId>javers-core</artifactId>
             <version>${javersVersion}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>${pdfboxVersion}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.6.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.15.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.25.0</version>
         </dependency>
 
     </dependencies>
