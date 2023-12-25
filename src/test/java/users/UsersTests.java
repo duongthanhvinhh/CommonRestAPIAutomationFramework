@@ -7,6 +7,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import reporting.ExtentReportManager;
 import reporting.Setup;
+import restUtils.AssertionUtils;
 import restUtils.RestUtils;
 import users.pojos.Users;
 import utils.JsonUtils;
@@ -14,6 +15,7 @@ import utils.JsonUtils;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Listeners(Setup.class)
 public class UsersTests extends UsersAPIs{
@@ -72,7 +74,8 @@ public class UsersTests extends UsersAPIs{
     @Test
     public void createUserAndVerifyResponse() throws IOException {
 
-        Users payload = new Users();
+//        Users payload = new Users();
+        Users payload = Payloads.getCreateUserPayloadFromPojo();
         Response response = createUser(payload);
 
         //first way
@@ -83,5 +86,21 @@ public class UsersTests extends UsersAPIs{
         ObjectMapper objectMapper = new ObjectMapper();
         Users createUsersResponse = objectMapper.readValue(response.getBody().asString(), Users.class);
         Assert.assertEquals(createUsersResponse,payload);
+//        Optional userID = Optional.ofNullable(response.jsonPath().get("idd"));
+//        if (userID.isPresent()){
+//            System.out.println("Id is: " + userID);
+//        } else System.out.println("Field not found");
+    }
+
+    @Test
+    public void createUserAndVerifyResponseWithAssertionsUtil() throws IOException {
+
+        Users payload = Payloads.getCreateUserPayloadFromPojo();
+        Response response = createUser(payload);
+
+        Map<String,Object> expectedValuesMap = new HashMap<>();
+        expectedValuesMap.put("userName",payload.getUserName());
+        expectedValuesMap.put("password",payload.getPassWord());
+        AssertionUtils.assertExpectedValuesWithJsonPath(response,expectedValuesMap);
     }
 }
