@@ -13,31 +13,29 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.3</version>
+                <version>3.0.0-M7</version>
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-<!--                    <folkCount>0 </folkCount>-->
+<!--                    <forkCount>0</forkCount>-->
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <restassuredVersion>5.4.0</restassuredVersion>
-        <testngVersion>7.8.0</testngVersion>
-        <jacksonVersion>2.16.0</jacksonVersion>
-        <gsonVersion>2.10.1</gsonVersion>
-        <extentVersion>5.1.1</extentVersion>
-        <datafakerVersion>2.0.2</datafakerVersion>
-        <lombokVersion>1.18.30</lombokVersion>
-        <apacheCommonLangVersion>3.14.0</apacheCommonLangVersion>
-        <javersVersion>7.3.6</javersVersion>
-        <pdfboxVersion>3.0.1</pdfboxVersion>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <restassuredVersion>5.3.0</restassuredVersion>
+        <testngVersion>7.7.0</testngVersion>
+        <jacksonVersion>2.14.1</jacksonVersion>
+        <gsonVersion>2.10</gsonVersion>
+        <extentVersion>5.0.9</extentVersion>
+        <datafakerVersion>1.8.0</datafakerVersion>
+        <lombokVersion>1.18.24</lombokVersion>
+        <apacheCommonLangVersion>3.12.0</apacheCommonLangVersion>
+        <javersVersion>6.12.0</javersVersion>
     </properties>
 
     <dependencies>
@@ -68,14 +66,12 @@
             <artifactId>gson</artifactId>
             <version>${gsonVersion}</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
             <version>${extentVersion}</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/net.datafaker/datafaker -->
         <dependency>
             <groupId>net.datafaker</groupId>
@@ -104,33 +100,33 @@
             <version>${javersVersion}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
         <dependency>
-            <groupId>org.apache.pdfbox</groupId>
-            <artifactId>pdfbox</artifactId>
-            <version>${pdfboxVersion}</version>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.2.3</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
         <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>5.6.2</version>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.3</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.github.ozlerhakan/poiji -->
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>4.15.0</version>
+            <groupId>com.github.ozlerhakan</groupId>
+            <artifactId>poiji</artifactId>
+            <version>4.1.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+        <!-- https://mvnrepository.com/artifact/org.instancio/instancio-core -->
         <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
-            <version>2.25.0</version>
+            <groupId>org.instancio</groupId>
+            <artifactId>instancio-core</artifactId>
+            <version>2.15.0</version>
         </dependency>
 
     </dependencies>
-
 </project>
