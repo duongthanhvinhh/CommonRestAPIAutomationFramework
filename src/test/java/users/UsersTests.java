@@ -60,6 +60,7 @@ public class UsersTests extends UsersAPIs{
     public void createUserWithPojo() throws IOException {
 
 //        Users requestPayload = Payloads.getCreateUserPayloadFromPojo();
+        //Serialize
         Users requestPayload = new Users();
 //        Users requestPayload = new Users().toBuilder().userName("To Builder").build(); //xai toBuilder nếu muốn set lại giá trị 1 field nào đó khi ko muốn dùng default value
 //        System.out.println(new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(requestPayload));
@@ -78,6 +79,7 @@ public class UsersTests extends UsersAPIs{
 //        Assert.assertEquals(response.jsonPath().getString("password"),payload.getPassWord());
 
         //second way: parse the response to object
+        //Deserialize response payload to pojo object
         ObjectMapper objectMapper = new ObjectMapper();
         Users createUsersResponse = objectMapper.readValue(response.getBody().asString(), Users.class);
         Assert.assertEquals(createUsersResponse,payload);
