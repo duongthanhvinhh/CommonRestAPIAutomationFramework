@@ -5,17 +5,14 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import reporting.ExtentReportManager;
 import reporting.Setup;
 import restUtils.AssertionUtils;
 import restUtils.RestUtils;
 import users.pojos.Users;
-import utils.JsonUtils;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 @Listeners(Setup.class)
 public class UsersTests extends UsersAPIs{
@@ -79,7 +76,7 @@ public class UsersTests extends UsersAPIs{
         Response response = createUser(payload);
 
         //first way
-//        Assert.assertEquals(response.jsonPath().getString("password"),payload.getPassWord());
+//        Assert.assertEquals(response.jsonPath().getString("passWord"),payload.getPassWord());
 
         //second way: parse the response to object
         //Deserialize response payload to pojo object
@@ -100,7 +97,7 @@ public class UsersTests extends UsersAPIs{
 
         Map<String,Object> expectedValuesMap = new HashMap<>();
         expectedValuesMap.put("userName",payload.getUserName());
-        expectedValuesMap.put("password",payload.getPassWord());
+        expectedValuesMap.put("passWord",payload.getPassword());
         AssertionUtils.assertExpectedValuesWithJsonPath(response,expectedValuesMap);
     }
 }

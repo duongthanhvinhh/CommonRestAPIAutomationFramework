@@ -12,7 +12,7 @@ public class Payloads {
     public static String getCreateUserPayloadFromString(String userName, String passWord){
         String payload = "{\n" +
                 "  \"userName\": \""+userName+"\",\n" +
-                "  \"password\": \""+passWord+"\"\n" +
+                "  \"passWord\": \""+passWord+"\"\n" +
                 "}";
         return payload;
     }
@@ -36,7 +36,7 @@ public class Payloads {
         return  Users
                 .builder()
                 .userName(RandomDataGenerator.getRandomDataFor(RandomDataTypeNames.FULLNAME))
-                .passWord(RandomDataGenerator.getRandomAlphabets(5))
+                .password(RandomDataGenerator.getRandomDataFor(RandomDataTypeNames.PASSWORD))
                 .build();
     }
 }
