@@ -36,6 +36,10 @@
         <lombokVersion>1.18.24</lombokVersion>
         <apacheCommonLangVersion>3.12.0</apacheCommonLangVersion>
         <javersVersion>6.12.0</javersVersion>
+        <instancioVersion>2.15.0</instancioVersion>
+        <poiVersion>5.2.5</poiVersion>
+        <poixmlVersion>5.2.5</poixmlVersion>
+        <poijiVersion>4.1.2</poijiVersion>
     </properties>
 
     <dependencies>
@@ -100,32 +104,11 @@
             <version>${javersVersion}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>5.2.3</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>5.2.3</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.github.ozlerhakan/poiji -->
-        <dependency>
-            <groupId>com.github.ozlerhakan</groupId>
-            <artifactId>poiji</artifactId>
-            <version>4.1.1</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.instancio/instancio-core -->
         <dependency>
             <groupId>org.instancio</groupId>
             <artifactId>instancio-core</artifactId>
-            <version>2.15.0</version>
+            <version>${instancioVersion}</version>
         </dependency>
 
 <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox &ndash;&gt;-->
@@ -135,6 +118,26 @@
 <!--            <version>3.0.1</version>-->
 <!--        </dependency>-->
 
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poiVersion}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poixmlVersion}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.github.ozlerhakan/poiji -->
+        <dependency>
+            <groupId>com.github.ozlerhakan</groupId>
+            <artifactId>poiji</artifactId>
+            <version>${poijiVersion}</version>
+        </dependency>
 
     </dependencies>
 </project>

@@ -1,18 +1,24 @@
 package users;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.poiji.bind.Poiji;
+import com.poiji.option.PoijiOptions;
 import io.restassured.response.Response;
+import lombok.Data;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import reporting.Setup;
 import restUtils.AssertionUtils;
 import restUtils.RestUtils;
 import users.pojos.Users;
+import users.pojos.UsersPoiji;
+import utils.ExcelUtils;
 
+import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Listeners(Setup.class)
 public class UsersTests extends UsersAPIs{
@@ -97,7 +103,43 @@ public class UsersTests extends UsersAPIs{
 
         Map<String,Object> expectedValuesMap = new HashMap<>();
         expectedValuesMap.put("userName",payload.getUserName());
-        expectedValuesMap.put("passWord",payload.getPassword());
+        expectedValuesMap.put("password",payload.getPassword());
         AssertionUtils.assertExpectedValuesWithJsonPath(response,expectedValuesMap);
+    }
+
+    @DataProvider(name = "userData")
+    public Iterator<Users> getCreateUserData() throws IOException {
+        List<LinkedHashMap<String,String>> excelDataAsListOfMap = ExcelUtils.getExcelDataAsListOfMap("CreateUserData","Sheet1");
+        List<Users> userData = new ArrayList<>();
+        for (LinkedHashMap<String,String> data : excelDataAsListOfMap){
+            Users user = Users.builder()
+                    .userName(data.get("userName"))
+                    .password(data.get("password"))
+                    .build();
+            userData.add(user);
+        }
+        return  userData.iterator();
+    }
+
+    @Test(dataProvider = "userData")
+    public void createUserWithDataFromExcelFile(Users users) throws IOException {
+
+        Response response = createUser(users);
+
+        Map<String,Object> expectedValuesMap = new HashMap<>();
+        expectedValuesMap.put("userName",users.getUserName());
+        expectedValuesMap.put("password",users.getPassword());
+        AssertionUtils.assertExpectedValuesWithJsonPath(response,expectedValuesMap);
+    }
+
+    public void createUserWithDataFromPoiji() throws IOException {
+        PoijiOptions option = PoijiOptions.PoijiOptionsBuilder.settings().addListDelimiter(";").build();
+        List<UsersPoiji> data = Poiji.fromExcel(new File("src/test/resources/testdata/CreateUserData.xlsx"), UsersPoiji.class);
+//        Response response = createUser(data);
+//
+//        Map<String,Object> expectedValuesMap = new HashMap<>();
+//        expectedValuesMap.put("userName",users.getUserName());
+//        expectedValuesMap.put("password",users.getPassword());
+//        AssertionUtils.assertExpectedValuesWithJsonPath(response,expectedValuesMap);
     }
 }

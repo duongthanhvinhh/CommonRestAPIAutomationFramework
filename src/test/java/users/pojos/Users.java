@@ -15,7 +15,9 @@ import utils.RandomDataTypeNames;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Users {
 
+    @Builder.Default
     private String userName = RandomDataGenerator.getRandomDataFor(RandomDataTypeNames.FULLNAME);
+    @Builder.Default
     private String password = RandomDataGenerator.getRandomDataFor(RandomDataTypeNames.PASSWORD);
 
     //    private String gender = Stream.of("male", "female", "others").findAny().get(); // lấy random, hay dùng đối với field gender male/female/other
