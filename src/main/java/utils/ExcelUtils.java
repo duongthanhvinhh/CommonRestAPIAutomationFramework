@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ExcelUtils {
 
@@ -44,6 +45,7 @@ public class ExcelUtils {
                 dataFromExcel.add(mapData);
             }
         }
+        dataFromExcel = dataFromExcel.stream().filter(keyValuePair -> keyValuePair.get("Enabled").equalsIgnoreCase("Y")).collect(Collectors.toList());
         return dataFromExcel;
     }
 }

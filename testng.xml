@@ -3,21 +3,22 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/PC/Desktop/CommonRestAPIAutomationFramework">
         <classes>
-            <class name="users.UsersTests">
-                <methods>
-                    <include name="createUserWithPayloadFromString"/>
-                    <include name="createUserWithPayloadFromMap"/>
-                    <include name="createUserWithURLFromJsonFile"/>
-                    <include name="createUserWithDataFaker"/>
-                    <include name="createUserWithPojo"/>
-                    <include name="createUserAndVerifyResponse"/>
-                </methods>
-            </class>
-            <class name="users.UsersTestsNew">
-                <methods>
-                    <include name="createUserAndVerify"/>
-                </methods>
-            </class>
+<!--            <class name="users.UsersTests">-->
+<!--                <methods>-->
+<!--                    <include name="createUserWithPayloadFromString"/>-->
+<!--                    <include name="createUserWithPayloadFromMap"/>-->
+<!--                    <include name="createUserWithURLFromJsonFile"/>-->
+<!--                    <include name="createUserWithDataFaker"/>-->
+<!--                    <include name="createUserWithPojo"/>-->
+<!--                    <include name="createUserAndVerifyResponse"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="users.UsersTestsNew">-->
+<!--                <methods>-->
+<!--                    <include name="createUserAndVerify"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="users.UserTestsScenarios"></class>
         </classes>
     </test>
 </suite>
